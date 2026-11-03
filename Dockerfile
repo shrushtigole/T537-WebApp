@@ -7,12 +7,12 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build && ls -la /app/dist
+RUN npm run build
 
 #Stage 2: Serve the built app using nginx
 FROM nginx:latest
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /application/dist /usr/share/nginx/html
 
 EXPOSE 80
 
