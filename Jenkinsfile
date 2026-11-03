@@ -53,7 +53,7 @@ pipeline {
                     docker run -d \
                         --name webapp-container \
                         -p 80:80 \
-                        $DOCKERHUB_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+                        $USERNAME/$IMAGE_NAME:$IMAGE_TAG
                 '''
             }
         }
