@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build
+RUN npm run build && ls -la /app/dist
 
 #Stage 2: Serve the built app using nginx
 FROM nginx:latest
